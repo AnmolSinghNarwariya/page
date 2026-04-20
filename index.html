@@ -170,6 +170,27 @@
             text-transform: uppercase;
         }
 
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
         .section-title {
             font-size: 1.8rem;
             margin-bottom: 25px;
@@ -214,7 +235,7 @@
     <div id="home" class="page">
         <div class="hero-split">
             <aside class="profile-card">
-                <img src="profile.jpg" alt="Anmol Singh" class="profile-pic">
+                <img src="anmol2.png" alt="Anmol Singh" class="profile-pic">
                 <h2 style="font-size: 1.3rem; margin-bottom: 8px;">Anmol Singh Narwariya</h2>
                 <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">PhD Scholar at IIT Hyderabad</p>
                 <div style="display:flex; flex-direction:column; gap:10px;">
@@ -248,46 +269,21 @@
                         <span style="color:var(--accent)">CGPA: 7.21</span>
                     </div>
                 </div>
-
-                <div class="card">
-                    <h3 style="margin-top:0;">Technical Stack</h3>
-                    <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                        <span class="tag">Verilog</span> <span class="tag">Python</span> <span class="tag">C</span> 
-                        <span class="tag">MATLAB</span> <span class="tag">Vivado</span> <span class="tag">Synopsys</span> 
-                        <span class="tag">Cadence</span> <span class="tag">FreeRTOS</span> <span class="tag">Linux</span>
-                    </div>
-                </div>
             </main>
         </div>
     </div>
 
     <div id="experience" class="page">
         <h2 class="section-title"><i data-lucide="briefcase"></i> Work Experience</h2>
-        
         <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                <div>
-                    <h3 style="margin:0;">Project Scientist</h3>
-                    <p style="color:var(--accent); margin:5px 0;">IIT Delhi | Jan 2020 – Jul 2020</p>
-                </div>
-            </div>
-            <ul>
-                <li>Implemented embedded systems for real-time air pollution analysis using vehicle-mounted sensors.</li>
-                <li>Deployed cloud-based data processing via Google Cloud Platform for real-time monitoring.</li>
-            </ul>
+            <h3 style="margin:0;">Project Scientist</h3>
+            <p style="color:var(--accent); margin:5px 0;">IIT Delhi | Jan 2020 – Jul 2020</p>
+            <p>Real-time air pollution analysis using vehicle-mounted sensors and Google Cloud Platform.</p>
         </div>
-
         <div class="card">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                <div>
-                    <h3 style="margin:0;">Project Assistant</h3>
-                    <p style="color:var(--accent); margin:5px 0;">CSIR-CEERI, Pilani | Jun 2019 – Dec 2019</p>
-                </div>
-            </div>
-            <ul>
-                <li>Developed H.264 encoded video surveillance systems on Nvidia Jetson TX2.</li>
-                <li>Integrated GStreamer pipelines for secure data transmission and NAS storage.</li>
-            </ul>
+            <h3 style="margin:0;">Project Assistant</h3>
+            <p style="color:var(--accent); margin:5px 0;">CSIR-CEERI, Pilani | Jun 2019 – Dec 2019</p>
+            <p>H.264 encoded video surveillance systems on Nvidia Jetson TX2.</p>
         </div>
     </div>
 
@@ -299,8 +295,9 @@
                 <span class="tag">IEEE TVLSI 2025</span>
                 <h3 style="margin:10px 0;">Leveraging IO Pad Protection Diodes for Recycled IC Detection</h3>
                 <p style="color:var(--text-secondary); font-size: 0.9rem;">Detection and age estimation using polynomial regression methodologies.</p>
+                <a href="#" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
             </div>
-            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Graph: Aging Curves]</div>
+            <img src="p1.png" alt="Paper Image 1" class="pub-image">
         </div>
 
         <div class="pub-item">
@@ -308,8 +305,9 @@
                 <span class="tag">IEEE TCAD 2024</span>
                 <h3 style="margin:10px 0;">Non-invasive Methodology for Age Estimation of ICs</h3>
                 <p style="color:var(--text-secondary); font-size: 0.9rem;">Utilizing Gaussian Process Regression for high-accuracy IC aging analysis.</p>
+                <a href="#" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
             </div>
-            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Model: GPR Architecture]</div>
+            <img src="p2.png" alt="Paper Image 2" class="pub-image">
         </div>
 
         <div class="pub-item">
@@ -317,27 +315,19 @@
                 <span class="tag">IEEE ISCAS 2025</span>
                 <h3 style="margin:10px 0;">REVBIT 2.0: Reverse Engineering of Bitstream</h3>
                 <p style="color:var(--text-secondary); font-size: 0.9rem;">LUT extraction, Boolean logic, and pin combination identification.</p>
+                <a href="#" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
             </div>
-            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Diagram: REVBIT Flow]</div>
+            <img src="p3.png" alt="Paper Image 3" class="pub-image">
         </div>
 
-        <div class="pub-item">
-            <div class="pub-info">
-                <span class="tag">IEEE ISCAS 2024</span>
-                <h3 style="margin:10px 0;">REVBIT: Reverse Engineering of Bitstream</h3>
-                <p style="color:var(--text-secondary); font-size: 0.9rem;">LUT extraction and Boolean logic.</p>
-            </div>
-            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Diagram: REVBIT Flow]</div>
-        </div>
-
-        
         <div class="pub-item">
             <div class="pub-info">
                 <span class="tag">IEEE DFT 2022</span>
-                <h3 style="margin:10px 0;">IC Age Estimation using Gaussian Process Regression.</h3>
-                #<p style="color:var(--text-secondary); font-size: 0.9rem;">LUT extraction and Boolean logic.</p>
+                <h3 style="margin:10px 0;">IC Age Estimation using Gaussian Process Regression</h3>
+                <p style="color:var(--text-secondary); font-size: 0.9rem;">Foundational research on IC aging characterization.</p>
+                <a href="https://doi.org/10.1109/DFT56152.2022.9962355" target="_blank" class="link-btn"><i data-lucide="external-link"></i> View Paper</a>
             </div>
-            <div class="pub-image" style="display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-size:0.8rem;">[Diagram: REVBIT Flow]</div>
+            <img src="p5.png" alt="Paper Image 5" class="pub-image">
         </div>
     </div>
 
@@ -345,15 +335,25 @@
         <h2 class="section-title"><i data-lucide="shield-check"></i> Granted Patents</h2>
         
         <div class="card">
-            <span class="tag">Patent No. 566646</span>
-            <h3>Reverse Engineering of Bitstream for LUT Extraction using DNN</h3>
-            <p style="color:var(--text-secondary);">Indian Patent | Granted: May 26, 2025</p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag">Patent No. 566646</span>
+                    <h3 style="margin:10px 0;">Reverse Engineering of Bitstream for LUT Extraction using DNN</h3>
+                    <p style="color:var(--text-secondary); font-size:0.9rem;">Indian Patent | Granted: May 26, 2025</p>
+                </div>
+                <a href="https://ipindiaservices.gov.in/publicsearch" target="_blank" class="link-btn">Search Patent</a>
+            </div>
         </div>
 
         <div class="card">
-            <span class="tag">Patent No. 565561</span>
-            <h3>Method for Extracting Look-Up Table and Determining Boolean Function</h3>
-            <p style="color:var(--text-secondary);">Indian Patent | Granted: April 25, 2025</p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag">Patent No. 565561</span>
+                    <h3 style="margin:10px 0;">Method for Extracting Look-Up Table and Determining Boolean Function</h3>
+                    <p style="color:var(--text-secondary); font-size:0.9rem;">Indian Patent | Granted: April 25, 2025</p>
+                </div>
+                <a href="https://ipindiaservices.gov.in/publicsearch" target="_blank" class="link-btn">Search Patent</a>
+            </div>
         </div>
     </div>
 
@@ -369,8 +369,8 @@
     <div id="contact" class="page">
         <h2 class="section-title"><i data-lucide="mail"></i> Contact Information</h2>
         <div class="card">
-            <p><strong>Email:</strong> ee21resch01011@iith.ac.in</p>
-            <p><strong>LinkedIn:</strong> linkedin.com/in/anmol-singh-narwariya</p>
+            <p><strong>Email:</strong> <a href="mailto:ee21resch01011@iith.ac.in" style="color:var(--accent); text-decoration:none;">ee21resch01011@iith.ac.in</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anmol-singh-narwariya" target="_blank" style="color:var(--accent); text-decoration:none;">linkedin.com/in/anmol-singh-narwariya</a></p>
             <p><strong>Phone:</strong> +91 9630229228</p>
             <p><strong>Location:</strong> IIT Hyderabad, India</p>
         </div>
@@ -379,7 +379,7 @@
 </div>
 
 <footer style="text-align:center; padding:40px; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.8rem;">
-    © 2026 Anmol Singh Narwariya | Designed for Research Excellence
+    © 2026 Anmol Singh Narwariya | <a href="https://linkedin.com/in/anmol-singh-narwariya" target="_blank" style="color:var(--text-secondary); text-decoration:none;">Connect on LinkedIn</a>
 </footer>
 
 <script>
