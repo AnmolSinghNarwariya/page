@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmol Singh Narwariya | PhD Research Portfolio</title>
+    <title>Anmol Narwariya | PhD Research Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -30,7 +30,6 @@
             overflow-x: hidden;
         }
 
-        /* Link Button Styling */
         .link-btn {
             display: inline-flex;
             align-items: center;
@@ -214,7 +213,7 @@
 <div class="bg-animate" id="particles"></div>
 
 <header>
-    <h1>Anmol Singh Narwariya</h1>
+    <h1>Anmol Narwariya</h1>
     <p>PhD Scholar | Hardware Security & VLSI Design</p>
 </header>
 
@@ -233,7 +232,7 @@
         <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
             
         <div style="text-align: center;">
-            <img src="anmol2.png" alt="Anmol Singh" style="width: 200px; height: 200px; object-fit: cover; border: 1px solid var(--accent-gold); padding: 5px; border-radius: 4px; margin-bottom: 25px;">
+            <img src="anmol2.png" alt="Anmol Narwariya" style="width: 200px; height: 200px; object-fit: cover; border: 1px solid var(--accent-gold); padding: 5px; border-radius: 4px; margin-bottom: 25px;">
             
             <div style="font-size: 0.9rem; color: var(--accent-gold); display: flex; flex-direction: column; gap: 12px; align-items: center;">
                 <span><i data-lucide="map-pin" style="width:16px; height:16px; vertical-align:text-bottom;"></i> Hyderabad, India</span>
@@ -246,7 +245,7 @@
                     <a href="https://scholar.google.com/citations?user=zkOaAJ4AAAAJ&hl=en" target="_blank" title="Google Scholar" style="color: var(--accent-gold);">
                         <i data-lucide="graduation-cap" style="width:24px; height:24px;"></i>
                     </a>
-                    <a href="https://github.com/AnmolSinghNarwariya" target="_blank" title="GitHub" style="color: var(--accent-gold);">
+                    <a href="https://github.com/AnmolNarwariya" target="_blank" title="GitHub" style="color: var(--accent-gold);">
                         <i data-lucide="github" style="width:24px; height:24px;"></i>
                     </a>
                 </div>
@@ -339,7 +338,7 @@
                 <span class="tag">IEEE DFT 2022</span>
                 <h3>Operational Age Estimation of ICs using Gaussian Process Regression</h3>
                 <p style="color: var(--text-secondary);">Novel methodology for age estimation of ICs using RO sensor.</p>
-                <a href="https://ieeexplore.ieee.org/document/9962355" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Paper</a>
+                <a href="https://ieeexplore.ieee.org/document/9962355" target="_blank" class="link-btn"><i data-lucide="external-link" style="width:14px;"></i> View Article</a>
             </div>
             <img src="p5.png" alt="DFT" class="pub-image">
         </div>
@@ -381,16 +380,14 @@
 </div>
 
 <footer>
-    <p>© 2026 Anmol Singh Narwariya | Laboratory for Hardware Security | IIT Hyderabad</p>
+    <p>© 2026 Anmol Narwariya | IIT Hyderabad</p>
 </footer>
 
 <script>
-    // Initialize Lucide Icons on Load
     document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     });
 
-    // Particle Background Effect
     const container = document.getElementById('particles');
     for (let i = 0; i < 40; i++) {
         const p = document.createElement('div');
@@ -403,7 +400,6 @@
         container.appendChild(p);
     }
 
-    // Single Page Application Navigation Logic
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         const activePage = document.getElementById(pageId) || document.getElementById('home');
@@ -414,7 +410,6 @@
             if(link.getAttribute('href') === `#${pageId}`) link.classList.add('active-nav');
         });
         
-        // Refresh icons to ensure visibility in newly shown containers
         lucide.createIcons();
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
@@ -424,7 +419,6 @@
         showPage(hash);
     });
 
-    // Run on initial load
     showPage(window.location.hash.substring(1) || 'home');
 </script>
 
