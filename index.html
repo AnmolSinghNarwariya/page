@@ -30,17 +30,6 @@
             overflow-x: hidden;
         }
 
-        .link-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .link-btn:hover { opacity: 0.7; }
-
         .bg-animate {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -51,16 +40,17 @@
 
         .particle {
             position: absolute;
-            background: var(--accent-gold);
+            /* background is now handled by JS for randomness */
             border-radius: 50%;
-            opacity: 0.1;
-            animation: float 20s infinite linear;
+            opacity: 0.08; 
+            animation: float 5s infinite linear;
+            filter: blur(2px); /* Increased blur for better bokeh feel */
         }
 
         @keyframes float {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            0% { transform: translateY(110vh) scale(0.5); opacity: 0; }
             50% { opacity: 0.2; }
-            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+            100% { transform: translateY(-20vh) scale(1.2); opacity: 0; }
         }
 
         header { 
@@ -125,7 +115,6 @@
         nav a:hover, nav a.active-nav { color: var(--accent-gold); }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; min-height: 70vh; }
-
         .page { display: none; }
         .page.active { display: block; }
 
@@ -162,48 +151,12 @@
         .edu-item-inline strong { color: var(--accent-gold); display: block; font-size: 0.95rem; }
         .edu-item-inline span { font-size: 0.85rem; color: var(--text-secondary); }
 
-        .pub-item {
-            display: grid;
-            grid-template-columns: 1fr 220px;
-            gap: 30px;
-            padding: 30px 0;
-            border-bottom: 1px solid var(--border);
-            animation: fadeInUp 0.8s ease backwards;
-        }
-
-        .pub-image {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            filter: grayscale(100%) contrast(1.1);
-        }
-        
-        .pub-item:hover .pub-image { filter: grayscale(0%); transform: scale(1.02); }
-
-        .tag {
-            color: var(--accent-gold);
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            display: block;
-            font-weight: 600;
-        }
-
         footer {
             text-align: center;
             padding: 100px 20px;
             color: var(--text-secondary);
             font-size: 0.8rem;
             border-top: 1px solid var(--border);
-        }
-
-        @media (max-width: 850px) {
-            .pub-item { grid-template-columns: 1fr; }
-            .pub-image { order: -1; height: 180px; }
-            nav { overflow-x: auto; justify-content: flex-start; }
         }
     </style>
 </head>
@@ -389,19 +342,34 @@
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        lucide.createIcons();
-    });
+    document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
 
     const container = document.getElementById('particles');
-    for (let i = 0; i < 40; i++) {
+    
+    // Curated color palette for a sophisticated colorful look
+    const colors = [
+        '#c5a47e', // Gold
+        '#8a745d', // Dim Gold
+        '#4a90e2', // Soft Blue
+        '#9b59b6', // Amethyst Purple
+        '#e74c3c', // Muted Red
+        '#2ecc71'  // Emerald Green
+    ];
+
+    for (let i = 0; i < 35; i++) {
         const p = document.createElement('div');
         p.className = 'particle';
-        p.style.width = Math.random() * 4 + 'px';
-        p.style.height = p.style.width;
+        
+        const size = Math.random() * 12 + 10; // Random size 10px to 22px
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        
+        // Pick a random color from the palette
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        
         p.style.left = Math.random() * 100 + 'vw';
-        p.style.animationDuration = (Math.random() * 10 + 10) + 's';
-        p.style.animationDelay = Math.random() * 10 + 's';
+        p.style.animationDuration = (Math.random() * 15 + 20) + 's';
+        p.style.animationDelay = Math.random() * 20 + 's';
         container.appendChild(p);
     }
 
@@ -409,23 +377,18 @@
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         const activePage = document.getElementById(pageId) || document.getElementById('home');
         activePage.classList.add('active');
-
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active-nav');
             if(link.getAttribute('href') === `#${pageId}`) link.classList.add('active-nav');
         });
-        
         lucide.createIcons();
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     window.addEventListener('hashchange', () => {
-        const hash = window.location.hash.substring(1) || 'home';
-        showPage(hash);
+        showPage(window.location.hash.substring(1) || 'home');
     });
-
     showPage(window.location.hash.substring(1) || 'home');
 </script>
-
 </body>
 </html>
